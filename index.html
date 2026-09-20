@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DefFinance - 방산 회계/재무/원가 인턴십</title>
+  <title>DefFinance - 방산 & Big 4 회계법인 인턴십 포털</title>
   <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -13,120 +13,207 @@
   <div id="root"></div>
 
   <script type="text/babel">
-    const MOCK_JOBS = [
+    const INITIAL_JOBS = [
+      // 1. 방산 기업 카테고리 공고
       {
         id: 1,
+        mainCategory: "DEFENSE",
         title: "2026년 하반기 방산원가 및 재무회계 인턴십",
         company: "한화에어로스페이스",
         tier: "체계업체 (1티어)",
         location: "서울 / 창원",
         type: "채용연계형 인턴",
-        categories: ["원가", "회계"],
+        subCategories: ["원가", "회계"],
         keywords: ["방산원가", "제700호", "K-IFRS", "SAP"],
         deadline: "2026.10.15",
         description: "방위산업체 원가 계산 및 방산원가 제57조/제700호 기준 원가검증 지원, K-IFRS 기반 재무제표 작성 보조.",
         qualifications: "상경계열 전공자 우대, 방산원가관리사 자격 보유자 우대, 회계 관련 자격증 우대",
-        applyUrl: "https://www.hanwhain.com/web/apply/notification/list.do" // 한화인 채용 공식링크
+        applyUrl: "https://www.hanwhain.com/web/apply/notification/list.do"
       },
       {
         id: 2,
+        mainCategory: "DEFENSE",
         title: "재무기획 및 세무 전산 회계 인턴 모집",
         company: "LIG넥스원",
         tier: "체계업체 (1티어)",
         location: "판교 / 용인",
         type: "체험형 인턴",
-        categories: ["재무", "세법"],
+        subCategories: ["재무", "세법"],
         keywords: ["조특법", "세무조정", "자금계획", "부가세 영세율"],
         deadline: "2026.10.20",
         description: "방위산업 관련 조세특례제한법(조특법) 세액공제 검토 지원 및 방산물자 수출입 관세·영세율 신고 보조.",
         qualifications: "세무/회계 관련 학과 우대, CPA/CTA 1차 합격자 우대",
-        applyUrl: "https://lignex1.recruiter.co.kr/" // LIG넥스원 채용 공식링크
+        applyUrl: "https://lignex1.recruiter.co.kr/"
       },
       {
         id: 3,
+        mainCategory: "DEFENSE",
         title: "방산 원가관리 및 관리회계 동계 인턴",
         company: "한국항공우주산업 (KAI)",
         tier: "체계업체 (1티어)",
         location: "사천 / 서울",
         type: "채용연계형 인턴",
-        categories: ["원가"],
+        subCategories: ["원가"],
         keywords: ["원가분석", "방산원가제도", "제안원가", "MRO"],
         deadline: "2026.10.30",
         description: "항공기 제조 및 MRO 사업 부문 제안원가 산정 및 프로젝트별 원가 집계, 원가 적정성 검토 지원.",
         qualifications: "경영/회계/산업공학 전공자, Excel 활용 능력 우수자",
-        applyUrl: "https://koreaaero.recruiter.co.kr/" // KAI 채용 공식링크
+        applyUrl: "https://koreaaero.recruiter.co.kr/"
+      },
+
+      // 2. Big 4 회계법인 카테고리 공고
+      {
+        id: 101,
+        mainCategory: "BIG4",
+        title: "Deal/FAS 본부 방산/방위산업 M&A 및 원가 자문 인턴",
+        company: "삼정KPMG",
+        tier: "Big 4 회계법인",
+        location: "서울 강남구 (역삼)",
+        type: "체험형 인턴 (3개월)",
+        subCategories: ["재무", "원가"],
+        keywords: ["Deal 본부", "방산 자문", "Valuation", "원가 검증"],
+        deadline: "2026.10.18",
+        description: "방위산업/건설/제조 부문 M&A 재무두딜리전스(FDD) 지원, 방산 원가체계 검증 및 기업가치평가(Valuation) 데이터 분석 지원.",
+        qualifications: "CPA 유예생/합격자 우대, 파이썬/SQLD 활용가능자 우대, 재무모델링 우수자",
+        applyUrl: "https://career.kr.kpmg.com/"
       },
       {
-        id: 4,
-        title: "재무회계 및 내부회계관리제도(ICFR) 인턴",
-        company: "현대로템",
-        tier: "체계업체 (1티어)",
-        location: "창원 / 의왕",
+        id: 102,
+        mainCategory: "BIG4",
+        title: "감사본부(Audit) 데이터 분석 & Journal Entry Testing RA",
+        company: "삼일PwC",
+        tier: "Big 4 회계법인",
+        location: "서울 용산구",
+        type: "채용연계형/RA 인턴",
+        subCategories: ["회계"],
+        keywords: ["Journal Entry Test", "SQL", "K-IFRS 1115", "ICFR"],
+        deadline: "2026.10.25",
+        description: "상장사 및 주요 제조/방산 수주 기업 감사 절차 지원, MySQL/Python을 활용한 분개 테스트(JE Test) 및 내부회계관리제도 샘플링 검토.",
+        qualifications: "CPA 1차 합격자 또는 회계학 이수자, SQL/데이터 분석 가능자 우대",
+        applyUrl: "https://www.pwc.com/kr/ko/careers.html"
+      },
+      {
+        id: 103,
+        mainCategory: "BIG4",
+        title: "Tax 본부 방산/수출기업 세무 자문 및 조세특례 지원 RA",
+        company: "Deloitte 안진",
+        tier: "Big 4 회계법인",
+        location: "서울 영등포구 (여의도)",
         type: "체험형 인턴",
-        categories: ["회계", "재무"],
-        keywords: ["ICFR", "JE Test", "K-IFRS 1115", "주석공시"],
-        deadline: "2026.11.05",
-        description: "수주산업(K-IFRS 1115호) 진행기준 수익인식 검토 지원, 내부회계관리제도(ICFR) 통제 테스트 보조.",
-        qualifications: "상경계열 전공, 회계감사/재무회계 이수자 우대",
-        applyUrl: "https://hyundai-rotem.recruiter.co.kr/" // 현대로템 채용 공식링크
+        subCategories: ["세법"],
+        keywords: ["조특법", "R&D 세액공제", "세무조정", "국제조세"],
+        deadline: "2026.11.02",
+        description: "방위산업체 및 첨단기술 기업의 R&D 세액공제 검토, 법인세 세무조정 및 수출물자 관세/부가세 영세율 검토 지원.",
+        qualifications: "CTA/CPA 준비생 우대, 세무회계 전공자",
+        applyUrl: "https://join.deloitte.co.kr/"
+      },
+      {
+        id: 104,
+        mainCategory: "BIG4",
+        title: "Strategy and Transactions (SaT) 제조/방산 세그먼트 RA",
+        company: "EY 한영",
+        tier: "Big 4 회계법인",
+        location: "서울 영등포구 (여의도)",
+        type: "체험형 인턴",
+        subCategories: ["재무"],
+        keywords: ["SaT", "사업타당성", "재무 진단", "Excel"],
+        deadline: "2026.11.10",
+        description: "방산 및 중공업 분야 인수합병 전략 수립, 사업 타당성 검토 및 재무 진단 모델 작성 지원.",
+        qualifications: "상경계열 학사/석사, 엑셀/파워포인트 작성 우수자",
+        applyUrl: "https://www.ey.com/ko_kr/careers"
       }
     ];
 
     function App() {
-      const [selectedCategory, setSelectedCategory] = React.useState('ALL');
+      const [mainTab, setMainTab] = React.useState('DEFENSE'); // 'DEFENSE' or 'BIG4'
+      const [selectedSubCat, setSelectedSubCat] = React.useState('ALL');
       const [searchQuery, setSearchQuery] = React.useState('');
       const [selectedJob, setSelectedJob] = React.useState(null);
 
-      const categories = [
-        { id: 'ALL', name: '전체 공고' },
+      const subCategories = [
+        { id: 'ALL', name: '전체' },
         { id: '원가', name: '원가 (방산원가)' },
-        { id: '회계', name: '회계 (K-IFRS/ICFR)' },
-        { id: '재무', name: '재무 / 자금' },
-        { id: '세법', name: '세법 / 관세' },
+        { id: '회계', name: '회계 / 감사' },
+        { id: '재무', name: '재무 / Deal' },
+        { id: '세법', name: '세법 / Tax' },
       ];
 
-      const filteredJobs = MOCK_JOBS.filter(job => {
-        const matchesCategory = selectedCategory === 'ALL' || job.categories.includes(selectedCategory);
+      const filteredJobs = INITIAL_JOBS.filter(job => {
+        const matchesMain = job.mainCategory === mainTab;
+        const matchesSub = selectedSubCat === 'ALL' || job.subCategories.includes(selectedSubCat);
         const matchesSearch = job.title.includes(searchQuery) || 
                               job.company.includes(searchQuery) || 
                               job.keywords.some(k => k.includes(searchQuery));
-        return matchesCategory && matchesSearch;
+        return matchesMain && matchesSub && matchesSearch;
       });
 
       return (
         <div className="min-h-screen bg-slate-50 text-slate-800 font-sans">
+          {/* Header */}
           <header className="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-30">
             <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div className="bg-blue-600 p-2 rounded-lg font-bold text-lg">🛡️</div>
                 <div>
                   <h1 className="text-xl font-bold tracking-tight">DefFinance</h1>
-                  <p className="text-xs text-slate-400">방위산업 특화 회계·재무·원가 인턴십 포털</p>
+                  <p className="text-xs text-slate-400">방위산업 & Big 4 회계법인 특화 회계·재무·원가 포털</p>
                 </div>
               </div>
               <div className="text-xs bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-full text-slate-300">
-                실시간 등록 공고 <span className="text-blue-400 font-semibold">{MOCK_JOBS.length}</span>건
+                실시간 업데이트 공고 <span className="text-blue-400 font-semibold">{INITIAL_JOBS.length}</span>건
               </div>
             </div>
           </header>
 
           <main className="max-w-6xl mx-auto px-4 py-8">
+            {/* 1. 메인 2대 카테고리 탭 (방산 VS Big 4) */}
+            <div className="flex gap-3 mb-6">
+              <button
+                onClick={() => { setMainTab('DEFENSE'); setSelectedSubCat('ALL'); }}
+                className={`flex-1 py-4 px-6 rounded-2xl font-bold text-base transition-all flex items-center justify-center gap-2 border ${
+                  mainTab === 'DEFENSE'
+                    ? 'bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-500/20'
+                    : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-100'
+                }`}
+              >
+                <span>🛡️</span> 방산 기업 인턴 공고
+                <span className={`text-xs px-2 py-0.5 rounded-full ${mainTab === 'DEFENSE' ? 'bg-blue-500 text-white' : 'bg-slate-100 text-slate-500'}`}>
+                  {INITIAL_JOBS.filter(j => j.mainCategory === 'DEFENSE').length}
+                </span>
+              </button>
+
+              <button
+                onClick={() => { setMainTab('BIG4'); setSelectedSubCat('ALL'); }}
+                className={`flex-1 py-4 px-6 rounded-2xl font-bold text-base transition-all flex items-center justify-center gap-2 border ${
+                  mainTab === 'BIG4'
+                    ? 'bg-indigo-600 text-white border-indigo-600 shadow-lg shadow-indigo-500/20'
+                    : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-100'
+                }`}
+              >
+                <span>🏢</span> Big 4 회계법인 인턴 공고
+                <span className={`text-xs px-2 py-0.5 rounded-full ${mainTab === 'BIG4' ? 'bg-indigo-500 text-white' : 'bg-slate-100 text-slate-500'}`}>
+                  {INITIAL_JOBS.filter(j => j.mainCategory === 'BIG4').length}
+                </span>
+              </button>
+            </div>
+
+            {/* 2. 검색 및 세부 직무 필터 */}
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 mb-8">
               <input
                 type="text"
-                placeholder="기업명, 직무 키워드 (예: 방산원가, K-IFRS, 조특법) 검색"
+                placeholder={mainTab === 'DEFENSE' ? "기업명, 키워드 (예: 방산원가, K-IFRS, 한화) 검색" : "회계법인, 본부 (예: Deal, 삼정, JE Test, Valuation) 검색"}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl mb-4 text-sm"
+                className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl mb-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <div className="flex flex-wrap gap-2">
-                {categories.map(cat => (
+                {subCategories.map(cat => (
                   <button
                     key={cat.id}
-                    onClick={() => setSelectedCategory(cat.id)}
-                    className={`px-4 py-2 rounded-xl text-sm font-medium ${
-                      selectedCategory === cat.id
-                        ? 'bg-blue-600 text-white shadow-md'
+                    onClick={() => setSelectedSubCat(cat.id)}
+                    className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
+                      selectedSubCat === cat.id
+                        ? (mainTab === 'DEFENSE' ? 'bg-blue-600 text-white' : 'bg-indigo-600 text-white')
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                     }`}
                   >
@@ -136,47 +223,66 @@
               </div>
             </div>
 
+            {/* 3. 공고 리스트 */}
             <div className="grid gap-4">
-              {filteredJobs.map(job => (
-                <div
-                  key={job.id}
-                  onClick={() => setSelectedJob(job)}
-                  className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-300 transition-all cursor-pointer"
-                >
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <span className="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md mr-2">
-                        {job.company}
-                      </span>
-                      <span className="text-xs font-medium px-2.5 py-1 bg-blue-50 text-blue-700 rounded-md">
-                        {job.type}
-                      </span>
-                      <h3 className="text-lg font-bold text-slate-900 mt-2">{job.title}</h3>
-                    </div>
-                    <button className="text-sm font-semibold text-blue-600 bg-blue-50 px-4 py-2 rounded-xl">
-                      상세보기
-                    </button>
-                  </div>
-                  <div className="mt-4 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
-                    {job.keywords.map((kw, i) => (
-                      <span key={i} className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded">
-                        #{kw}
-                      </span>
-                    ))}
-                  </div>
+              {filteredJobs.length === 0 ? (
+                <div className="bg-white p-12 rounded-2xl border border-slate-200 text-center text-slate-400">
+                  해당 조건에 일치하는 공고가 없습니다.
                 </div>
-              ))}
+              ) : (
+                filteredJobs.map(job => (
+                  <div
+                    key={job.id}
+                    onClick={() => setSelectedJob(job)}
+                    className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-400 transition-all cursor-pointer relative group"
+                  >
+                    <div className="flex justify-between items-start flex-wrap gap-2">
+                      <div>
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className={`text-xs font-bold px-2.5 py-1 rounded-md ${
+                            job.mainCategory === 'BIG4' ? 'bg-indigo-50 text-indigo-700 border border-indigo-100' : 'bg-blue-50 text-blue-700 border border-blue-100'
+                          }`}>
+                            {job.company}
+                          </span>
+                          <span className="text-xs font-medium px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">
+                            {job.type}
+                          </span>
+                        </div>
+                        <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                          {job.title}
+                        </h3>
+                        <p className="text-xs text-slate-400 mt-1">📍 {job.location} | ⏰ 마감일: {job.deadline}</p>
+                      </div>
+                      <button className={`text-sm font-semibold px-4 py-2 rounded-xl transition-all ${
+                        job.mainCategory === 'BIG4' ? 'bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100' : 'bg-blue-50 text-blue-600 group-hover:bg-blue-100'
+                      }`}>
+                        상세보기 ↗
+                      </button>
+                    </div>
+
+                    <div className="mt-4 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
+                      {job.keywords.map((kw, i) => (
+                        <span key={i} className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded">
+                          #{kw}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))
+              )}
             </div>
           </main>
 
-          {/* 공고 상세 모달 (지원 페이지 이동 버튼 추가) */}
+          {/* 공고 상세 모달 */}
           {selectedJob && (
             <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-              <div className="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-xl">
+              <div className="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-xl max-h-[90vh] overflow-y-auto">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded">
-                      {selectedJob.company}
+                    <span className={`text-xs font-bold px-2.5 py-1 rounded ${
+                      selectedJob.mainCategory === 'BIG4' ? 'bg-indigo-50 text-indigo-700' : 'bg-blue-50 text-blue-700'
+                    }`}>
+                      {selectedJob.company} ({selectedJob.tier})
                     </span>
                     <h2 className="text-xl font-bold text-slate-900 mt-2">{selectedJob.title}</h2>
                   </div>
@@ -186,11 +292,11 @@
                 <div className="space-y-4 my-6 border-y border-slate-100 py-6 text-sm text-slate-600">
                   <div>
                     <h4 className="font-bold text-slate-900 mb-1">📋 주요 업무</h4>
-                    <p className="bg-slate-50 p-3 rounded-xl">{selectedJob.description}</p>
+                    <p className="bg-slate-50 p-3 rounded-xl leading-relaxed">{selectedJob.description}</p>
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 mb-1">🎯 자격 요건 및 우대 사항</h4>
-                    <p className="bg-slate-50 p-3 rounded-xl">{selectedJob.qualifications}</p>
+                    <p className="bg-slate-50 p-3 rounded-xl leading-relaxed">{selectedJob.qualifications}</p>
                   </div>
                 </div>
 
@@ -205,9 +311,11 @@
                     href={selectedJob.applyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold shadow-md shadow-blue-500/20 flex items-center gap-1.5"
+                    className={`px-5 py-2.5 rounded-xl text-white text-sm font-semibold shadow-md flex items-center gap-1.5 ${
+                      selectedJob.mainCategory === 'BIG4' ? 'bg-indigo-600 hover:bg-indigo-700 shadow-indigo-500/20' : 'bg-blue-600 hover:bg-blue-700 shadow-blue-500/20'
+                    }`}
                   >
-                    지원하러 가기 (공식 사이트) ↗
+                    지원하러 가기 (공식 채용 사이트) ↗
                   </a>
                 </div>
               </div>
