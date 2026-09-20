@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DefFinance - 방산 회계/재무/원가 인턴십</title>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const MOCK_JOBS = [
+      {
+        id: 1,
+        title: "2026년 하반기 방산원가 및 재무회계 인턴십",
+        company: "한화에어로스페이스",
+        tier: "체계업체 (1티어)",
+        location: "서울 / 창원",
+        type: "채용연계형 인턴",
+        categories: ["원가", "회계"],
+        keywords: ["방산원가", "제700호", "K-IFRS", "SAP"],
+        deadline: "2026.10.15",
+        description: "방위산업체 원가 계산 및 방산원가 제57조/제700호 기준 원가검증 지원, K-IFRS 기반 재무제표 작성 보조.",
+        qualifications: "상경계열 전공자 우대, 방산원가관리사 자격 보유자 우대, 회계 관련 자격증 우대"
+      },
+      {
+        id: 2,
+        title: "재무기획 및 세무 전산 회계 인턴 모집",
+        company: "LIG넥스원",
+        tier: "체계업체 (1티어)",
+        location: "판교 / 용인",
+        type: "체험형 인턴",
+        categories: ["재무", "세법"],
+        keywords: ["조특법", "세무조정", "자금계획", "부가세 영세율"],
+        deadline: "2026.10.20",
+        description: "방위산업 관련 조세특례제한법(조특법) 세액공제 검토 지원 및 방산물자 수출입 관세·영세율 신고 보조.",
+        qualifications: "세무/회계 관련 학과 우대, CPA/CTA 1차 합격자 우대"
+      },
+      {
+        id: 3,
+        title: "방산 원가관리 및 관리회계 동계 인턴",
+        company: "한국항공우주산업 (KAI)",
+        tier: "체계업체 (1티어)",
+        location: "사천 / 서울",
+        type: "채용연계형 인턴",
+        categories: ["원가"],
+        keywords: ["원가분석", "방산원가제도", "제안원가", "MRO"],
+        deadline: "2026.10.30",
+        description: "항공기 제조 및 MRO 사업 부문 제안원가 산정 및 프로젝트별 원가 집계, 원가 적정성 검토 지원.",
+        qualifications: "경영/회계/산업공학 전공자, Excel 활용 능력 우수자"
+      },
+      {
+        id: 4,
+        title: "재무회계 및 내부회계관리제도(ICFR) 인턴",
+        company: "현대로템",
+        tier: "체계업체 (1티어)",
+        location: "창원 / 의왕",
+        type: "체험형 인턴",
+        categories: ["회계", "재무"],
+        keywords: ["ICFR", "JE Test", "K-IFRS 1115", "주석공시"],
+        deadline: "2026.11.05",
+        description: "수주산업(K-IFRS 1115호) 진행기준 수익인식 검토 지원, 내부회계관리제도(ICFR) 통제 테스트 보조.",
+        qualifications: "상경계열 전공, 회계감사/재무회계 이수자 우대"
+      }
+    ];
+
+    function App() {
+      const [selectedCategory, setSelectedCategory] = React.useState('ALL');
+      const [searchQuery, setSearchQuery] = React.useState('');
+      const [selectedJob, setSelectedJob] = React.useState(null);
+
+      const categories = [
+        { id: 'ALL', name: '전체 공고' },
+        { id: '원가', name: '원가 (방산원가)' },
+        { id: '회계', name: '회계 (K-IFRS/ICFR)' },
+        { id: '재무', name: '재무 / 자금' },
+        { id: '세법', name: '세법 / 관세' },
+      ];
+
+      const filteredJobs = MOCK_JOBS.filter(job => {
+        const matchesCategory = selectedCategory === 'ALL' || job.categories.includes(selectedCategory);
+        const matchesSearch = job.title.includes(searchQuery) || 
+                              job.company.includes(searchQuery) || 
+                              job.keywords.some(k => k.includes(searchQuery));
+        return matchesCategory && matchesSearch;
+      });
+
+      return (
+        <div className="min-h-screen bg-slate-50 text-slate-800 font-sans">
+          <header className="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-30">
+            <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <div className="bg-blue-600 p-2 rounded-lg font-bold text-lg">🛡️</div>
+                <div>
+                  <h1 className="text-xl font-bold tracking-tight">DefFinance</h1>
+                  <p className="text-xs text-slate-400">방위산업 특화 회계·재무·원가 인턴십 포털</p>
+                </div>
+              </div>
+              <div className="text-xs bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-full text-slate-300">
+                실시간 등록 공고 <span className="text-blue-400 font-semibold">{MOCK_JOBS.length}</span>건
+              </div>
+            </div>
+          </header>
+
+          <main className="max-w-6xl mx-auto px-4 py-8">
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 mb-8">
+              <input
+                type="text"
+                placeholder="기업명, 직무 키워드 (예: 방산원가, K-IFRS, 조특법) 검색"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl mb-4 text-sm"
+              />
+              <div className="flex flex-wrap gap-2">
+                {categories.map(cat => (
+                  <button
+                    key={cat.id}
+                    onClick={() => setSelectedCategory(cat.id)}
+                    className={`px-4 py-2 rounded-xl text-sm font-medium ${
+                      selectedCategory === cat.id
+                        ? 'bg-blue-600 text-white shadow-md'
+                        : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                    }`}
+                  >
+                    {cat.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid gap-4">
+              {filteredJobs.map(job => (
+                <div
+                  key={job.id}
+                  onClick={() => setSelectedJob(job)}
+                  className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-300 transition-all cursor-pointer"
+                >
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md mr-2">
+                        {job.company}
+                      </span>
+                      <span className="text-xs font-medium px-2.5 py-1 bg-blue-50 text-blue-700 rounded-md">
+                        {job.type}
+                      </span>
+                      <h3 className="text-lg font-bold text-slate-900 mt-2">{job.title}</h3>
+                    </div>
+                    <button className="text-sm font-semibold text-blue-600 bg-blue-50 px-4 py-2 rounded-xl">
+                      상세보기
+                    </button>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
+                    {job.keywords.map((kw, i) => (
+                      <span key={i} className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded">
+                        #{kw}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </main>
+
+          {selectedJob && (
+            <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+              <div className="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-xl">
+                <div className="flex justify-between items-start mb-4">
+                  <h2 className="text-xl font-bold text-slate-900">{selectedJob.title}</h2>
+                  <button onClick={() => setSelectedJob(null)} className="text-slate-400 p-2">✕</button>
+                </div>
+                <div className="space-y-4 my-4 border-y py-4 text-sm text-slate-600">
+                  <p><strong>주요 업무:</strong> {selectedJob.description}</p>
+                  <p><strong>자격 요건:</strong> {selectedJob.qualifications}</p>
+                </div>
+                <div className="flex justify-end gap-2">
+                  <button onClick={() => setSelectedJob(null)} className="px-4 py-2 border rounded-xl">닫기</button>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
