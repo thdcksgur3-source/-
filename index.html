@@ -14,7 +14,6 @@
 
   <script type="text/babel">
     const INITIAL_JOBS = [
-      // 1. 방산 기업 카테고리 공고
       {
         id: 1,
         mainCategory: "DEFENSE",
@@ -60,8 +59,6 @@
         qualifications: "경영/회계/산업공학 전공자, Excel 활용 능력 우수자",
         applyUrl: "https://koreaaero.recruiter.co.kr/"
       },
-
-      // 2. Big 4 회계법인 카테고리 공고
       {
         id: 101,
         mainCategory: "BIG4",
@@ -91,44 +88,27 @@
         description: "상장사 및 주요 제조/방산 수주 기업 감사 절차 지원, MySQL/Python을 활용한 분개 테스트(JE Test) 및 내부회계관리제도 샘플링 검토.",
         qualifications: "CPA 1차 합격자 또는 회계학 이수자, SQL/데이터 분석 가능자 우대",
         applyUrl: "https://www.pwc.com/kr/ko/careers.html"
-      },
-      {
-        id: 103,
-        mainCategory: "BIG4",
-        title: "Tax 본부 방산/수출기업 세무 자문 및 조세특례 지원 RA",
-        company: "Deloitte 안진",
-        tier: "Big 4 회계법인",
-        location: "서울 영등포구 (여의도)",
-        type: "체험형 인턴",
-        subCategories: ["세법"],
-        keywords: ["조특법", "R&D 세액공제", "세무조정", "국제조세"],
-        deadline: "2026.11.02",
-        description: "방위산업체 및 첨단기술 기업의 R&D 세액공제 검토, 법인세 세무조정 및 수출물자 관세/부가세 영세율 검토 지원.",
-        qualifications: "CTA/CPA 준비생 우대, 세무회계 전공자",
-        applyUrl: "https://join.deloitte.co.kr/"
-      },
-      {
-        id: 104,
-        mainCategory: "BIG4",
-        title: "Strategy and Transactions (SaT) 제조/방산 세그먼트 RA",
-        company: "EY 한영",
-        tier: "Big 4 회계법인",
-        location: "서울 영등포구 (여의도)",
-        type: "체험형 인턴",
-        subCategories: ["재무"],
-        keywords: ["SaT", "사업타당성", "재무 진단", "Excel"],
-        deadline: "2026.11.10",
-        description: "방산 및 중공업 분야 인수합병 전략 수립, 사업 타당성 검토 및 재무 진단 모델 작성 지원.",
-        qualifications: "상경계열 학사/석사, 엑셀/파워포인트 작성 우수자",
-        applyUrl: "https://www.ey.com/ko_kr/careers"
       }
     ];
 
     function App() {
-      const [mainTab, setMainTab] = React.useState('DEFENSE'); // 'DEFENSE' or 'BIG4'
+      const [jobs, setJobs] = React.useState(INITIAL_JOBS);
+      const [mainTab, setMainTab] = React.useState('DEFENSE');
       const [selectedSubCat, setSelectedSubCat] = React.useState('ALL');
       const [searchQuery, setSearchQuery] = React.useState('');
       const [selectedJob, setSelectedJob] = React.useState(null);
+
+      // 10분마다 업데이트되는 jobs.json을 불러오는 효과
+      React.useEffect(() => {
+        fetch('./jobs.json')
+          .then(res => res.json())
+          .then(data => {
+            if (Array.isArray(data) && data.length > 0) {
+              setJobs(data);
+            }
+          })
+          .catch(err => console.log("기본 내장 데이터를 사용합니다."));
+      }, []);
 
       const subCategories = [
         { id: 'ALL', name: '전체' },
@@ -138,12 +118,12 @@
         { id: '세법', name: '세법 / Tax' },
       ];
 
-      const filteredJobs = INITIAL_JOBS.filter(job => {
+      const filteredJobs = jobs.filter(job => {
         const matchesMain = job.mainCategory === mainTab;
-        const matchesSub = selectedSubCat === 'ALL' || job.subCategories.includes(selectedSubCat);
+        const matchesSub = selectedSubCat === 'ALL' || (job.subCategories && job.subCategories.includes(selectedSubCat));
         const matchesSearch = job.title.includes(searchQuery) || 
                               job.company.includes(searchQuery) || 
-                              job.keywords.some(k => k.includes(searchQuery));
+                              (job.keywords && job.keywords.some(k => k.includes(searchQuery)));
         return matchesMain && matchesSub && matchesSearch;
       });
 
@@ -160,13 +140,13 @@
                 </div>
               </div>
               <div className="text-xs bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-full text-slate-300">
-                실시간 업데이트 공고 <span className="text-blue-400 font-semibold">{INITIAL_JOBS.length}</span>건
+                실시간 업데이트 공고 <span className="text-blue-400 font-semibold">{jobs.length}</span>건
               </div>
             </div>
           </header>
 
           <main className="max-w-6xl mx-auto px-4 py-8">
-            {/* 1. 메인 2대 카테고리 탭 (방산 VS Big 4) */}
+            {/* 1. 메인 탭 */}
             <div className="flex gap-3 mb-6">
               <button
                 onClick={() => { setMainTab('DEFENSE'); setSelectedSubCat('ALL'); }}
@@ -178,7 +158,7 @@
               >
                 <span>🛡️</span> 방산 기업 인턴 공고
                 <span className={`text-xs px-2 py-0.5 rounded-full ${mainTab === 'DEFENSE' ? 'bg-blue-500 text-white' : 'bg-slate-100 text-slate-500'}`}>
-                  {INITIAL_JOBS.filter(j => j.mainCategory === 'DEFENSE').length}
+                  {jobs.filter(j => j.mainCategory === 'DEFENSE').length}
                 </span>
               </button>
 
@@ -192,12 +172,12 @@
               >
                 <span>🏢</span> Big 4 회계법인 인턴 공고
                 <span className={`text-xs px-2 py-0.5 rounded-full ${mainTab === 'BIG4' ? 'bg-indigo-500 text-white' : 'bg-slate-100 text-slate-500'}`}>
-                  {INITIAL_JOBS.filter(j => j.mainCategory === 'BIG4').length}
+                  {jobs.filter(j => j.mainCategory === 'BIG4').length}
                 </span>
               </button>
             </div>
 
-            {/* 2. 검색 및 세부 직무 필터 */}
+            {/* 2. 검색 및 필터 */}
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 mb-8">
               <input
                 type="text"
@@ -223,7 +203,7 @@
               </div>
             </div>
 
-            {/* 3. 공고 리스트 */}
+            {/* 3. 공고 목록 */}
             <div className="grid gap-4">
               {filteredJobs.length === 0 ? (
                 <div className="bg-white p-12 rounded-2xl border border-slate-200 text-center text-slate-400">
@@ -261,7 +241,7 @@
                     </div>
 
                     <div className="mt-4 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
-                      {job.keywords.map((kw, i) => (
+                      {job.keywords && job.keywords.map((kw, i) => (
                         <span key={i} className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded">
                           #{kw}
                         </span>
@@ -273,7 +253,7 @@
             </div>
           </main>
 
-          {/* 공고 상세 모달 */}
+          {/* 모달 창 */}
           {selectedJob && (
             <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
               <div className="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-xl max-h-[90vh] overflow-y-auto">
