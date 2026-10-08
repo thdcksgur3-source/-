@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DefFinance - 방산 & Big 4 회계법인 인턴십 포털</title>
+  <title>DefFinance - 방산 · Big 4 · 대기업/공기업 재무·회계 포털</title>
   <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -14,16 +14,14 @@
 
   <script type="text/babel">
     function App() {
-      // 더미 데이터 없이 실제 수집된 jobs.json 데이터만 관리
       const [jobs, setJobs] = React.useState([]);
       const [loading, setLoading] = React.useState(true);
-      const [mainTab, setMainTab] = React.useState('DEFENSE');
+      const [mainTab, setMainTab] = React.useState('DEFENSE'); // DEFENSE, BIG4, GENERAL
       const [selectedSubCat, setSelectedSubCat] = React.useState('ALL');
       const [searchQuery, setSearchQuery] = React.useState('');
       const [selectedJob, setSelectedJob] = React.useState(null);
 
       React.useEffect(() => {
-        // 크롤러가 생성한 jobs.json 데이터 동적 가져오기
         fetch('./jobs.json')
           .then(res => {
             if (!res.ok) throw new Error("jobs.json 로드 실패");
@@ -43,10 +41,10 @@
 
       const subCategories = [
         { id: 'ALL', name: '전체' },
-        { id: '원가', name: '원가 (방산원가)' },
-        { id: '회계', name: '회계 / 감사' },
-        { id: '재무', name: '재무 / Deal' },
-        { id: '세법', name: '세법 / Tax' },
+        { id: '원가', name: '원가 / 관리회계' },
+        { id: '회계', name: '재무회계 / 감사' },
+        { id: '재무', name: '재무기획 / 자금 / Deal' },
+        { id: '세법', name: '세무 / 세법' },
       ];
 
       const filteredJobs = jobs.filter(job => {
@@ -66,7 +64,7 @@
                 <div className="bg-blue-600 p-2 rounded-lg font-bold text-lg">🛡️</div>
                 <div>
                   <h1 className="text-xl font-bold tracking-tight">DefFinance</h1>
-                  <p className="text-xs text-slate-400">방위산업 & Big 4 회계법인 특화 회계·재무·원가 포털</p>
+                  <p className="text-xs text-slate-400">방산 · Big 4 · 대기업/공기업 커스텀 채용 알림 플랫폼</p>
                 </div>
               </div>
               <div className="text-xs bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-full text-slate-300">
@@ -76,16 +74,17 @@
           </header>
 
           <main className="max-w-6xl mx-auto px-4 py-8">
-            <div className="flex gap-3 mb-6">
+            {/* 3대 메인 카테고리 탭 */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
               <button
                 onClick={() => { setMainTab('DEFENSE'); setSelectedSubCat('ALL'); }}
-                className={`flex-1 py-4 px-6 rounded-2xl font-bold text-base transition-all flex items-center justify-center gap-2 border ${
+                className={`py-4 px-5 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-2 border ${
                   mainTab === 'DEFENSE'
-                    ? 'bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-500/20'
+                    ? 'bg-blue-600 text-white border-blue-600 shadow-md shadow-blue-500/20'
                     : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-100'
                 }`}
               >
-                <span>🛡️</span> 방산 기업 인턴 공고
+                <span>🛡️</span> 방산 기업
                 <span className={`text-xs px-2 py-0.5 rounded-full ${mainTab === 'DEFENSE' ? 'bg-blue-500 text-white' : 'bg-slate-100 text-slate-500'}`}>
                   {jobs.filter(j => j.mainCategory === 'DEFENSE').length}
                 </span>
@@ -93,23 +92,38 @@
 
               <button
                 onClick={() => { setMainTab('BIG4'); setSelectedSubCat('ALL'); }}
-                className={`flex-1 py-4 px-6 rounded-2xl font-bold text-base transition-all flex items-center justify-center gap-2 border ${
+                className={`py-4 px-5 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-2 border ${
                   mainTab === 'BIG4'
-                    ? 'bg-indigo-600 text-white border-indigo-600 shadow-lg shadow-indigo-500/20'
+                    ? 'bg-indigo-600 text-white border-indigo-600 shadow-md shadow-indigo-500/20'
                     : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-100'
                 }`}
               >
-                <span>🏢</span> Big 4 회계법인 인턴 공고
-                <span className={`text-xs px-2 py-0.5 rounded-full ${mainTab === 'BIG4' ? 'bg-indigo-50 text-indigo-500' : 'bg-slate-100 text-slate-500'}`}>
+                <span>🏢</span> Big 4 회계법인
+                <span className={`text-xs px-2 py-0.5 rounded-full ${mainTab === 'BIG4' ? 'bg-indigo-500 text-white' : 'bg-slate-100 text-slate-500'}`}>
                   {jobs.filter(j => j.mainCategory === 'BIG4').length}
+                </span>
+              </button>
+
+              <button
+                onClick={() => { setMainTab('GENERAL'); setSelectedSubCat('ALL'); }}
+                className={`py-4 px-5 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-2 border ${
+                  mainTab === 'GENERAL'
+                    ? 'bg-emerald-600 text-white border-emerald-600 shadow-md shadow-emerald-500/20'
+                    : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-100'
+                }`}
+              >
+                <span>💼</span> 대기업 / 일반기업 / 공공
+                <span className={`text-xs px-2 py-0.5 rounded-full ${mainTab === 'GENERAL' ? 'bg-emerald-500 text-white' : 'bg-slate-100 text-slate-500'}`}>
+                  {jobs.filter(j => j.mainCategory === 'GENERAL').length}
                 </span>
               </button>
             </div>
 
+            {/* 필터 및 검색 */}
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 mb-8">
               <input
                 type="text"
-                placeholder={mainTab === 'DEFENSE' ? "기업명, 키워드 (예: 방산원가, K-IFRS, 한화) 검색" : "회계법인, 본부 (예: Deal, 삼정, JE Test, Valuation) 검색"}
+                placeholder="기업명, 키워드 (예: K-IFRS, SAP, 관리회계, 세무조정) 검색"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl mb-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -121,7 +135,7 @@
                     onClick={() => setSelectedSubCat(cat.id)}
                     className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
                       selectedSubCat === cat.id
-                        ? (mainTab === 'DEFENSE' ? 'bg-blue-600 text-white' : 'bg-indigo-600 text-white')
+                        ? (mainTab === 'DEFENSE' ? 'bg-blue-600 text-white' : mainTab === 'BIG4' ? 'bg-indigo-600 text-white' : 'bg-emerald-600 text-white')
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                     }`}
                   >
@@ -131,6 +145,7 @@
               </div>
             </div>
 
+            {/* 공고 카드 리스트 */}
             <div className="grid gap-4">
               {loading ? (
                 <div className="bg-white p-12 rounded-2xl border border-slate-200 text-center text-slate-400">
@@ -151,7 +166,11 @@
                       <div>
                         <div className="flex items-center gap-2 mb-2">
                           <span className={`text-xs font-bold px-2.5 py-1 rounded-md ${
-                            job.mainCategory === 'BIG4' ? 'bg-indigo-50 text-indigo-700 border border-indigo-100' : 'bg-blue-50 text-blue-700 border border-blue-100'
+                            job.mainCategory === 'BIG4' 
+                              ? 'bg-indigo-50 text-indigo-700 border border-indigo-100' 
+                              : job.mainCategory === 'GENERAL'
+                              ? 'bg-emerald-50 text-emerald-700 border border-emerald-100'
+                              : 'bg-blue-50 text-blue-700 border border-blue-100'
                           }`}>
                             {job.company}
                           </span>
@@ -165,7 +184,11 @@
                         <p className="text-xs text-slate-400 mt-1">📍 {job.location || '상세내용 참조'} | ⏰ 마감일: {job.deadline || '상시'}</p>
                       </div>
                       <button className={`text-sm font-semibold px-4 py-2 rounded-xl transition-all ${
-                        job.mainCategory === 'BIG4' ? 'bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100' : 'bg-blue-50 text-blue-600 group-hover:bg-blue-100'
+                        job.mainCategory === 'BIG4' 
+                          ? 'bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100' 
+                          : job.mainCategory === 'GENERAL'
+                          ? 'bg-emerald-50 text-emerald-600 group-hover:bg-emerald-100'
+                          : 'bg-blue-50 text-blue-600 group-hover:bg-blue-100'
                       }`}>
                         상세보기 ↗
                       </button>
@@ -184,13 +207,18 @@
             </div>
           </main>
 
+          {/* 모달 */}
           {selectedJob && (
             <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
               <div className="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-xl max-h-[90vh] overflow-y-auto">
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <span className={`text-xs font-bold px-2.5 py-1 rounded ${
-                      selectedJob.mainCategory === 'BIG4' ? 'bg-indigo-50 text-indigo-700' : 'bg-blue-50 text-blue-700'
+                      selectedJob.mainCategory === 'BIG4' 
+                        ? 'bg-indigo-50 text-indigo-700' 
+                        : selectedJob.mainCategory === 'GENERAL'
+                        ? 'bg-emerald-50 text-emerald-700'
+                        : 'bg-blue-50 text-blue-700'
                     }`}>
                       {selectedJob.company}
                     </span>
@@ -222,7 +250,11 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`px-5 py-2.5 rounded-xl text-white text-sm font-semibold shadow-md flex items-center gap-1.5 ${
-                      selectedJob.mainCategory === 'BIG4' ? 'bg-indigo-600 hover:bg-indigo-700 shadow-indigo-500/20' : 'bg-blue-600 hover:bg-blue-700 shadow-blue-500/20'
+                      selectedJob.mainCategory === 'BIG4' 
+                        ? 'bg-indigo-600 hover:bg-indigo-700 shadow-indigo-500/20' 
+                        : selectedJob.mainCategory === 'GENERAL'
+                        ? 'bg-emerald-600 hover:bg-emerald-700 shadow-emerald-500/20'
+                        : 'bg-blue-600 hover:bg-blue-700 shadow-blue-500/20'
                     }`}
                   >
                     공식 채용 공고글 바로가기 ↗
