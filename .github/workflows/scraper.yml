@@ -2,9 +2,8 @@ name: 10-Min Defense & Big4 Job Auto Scraper
 
 on:
   schedule:
-    # 10분마다 자동 실행 (UTC 기준)
     - cron: '*/10 * * * *'
-  workflow_dispatch: # 수동 실행 버튼 활성화
+  workflow_dispatch:
 
 jobs:
   scrape-and-update:
@@ -24,6 +23,9 @@ jobs:
           pip install requests beautifulsoup4
 
       - name: Run Scraper Script
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
         run: python scraper.py
 
       - name: Commit and Push Updated Jobs Data
