@@ -1,5 +1,26 @@
 [
   {
+    "id": "saramin_-1218481008195342971",
+    "uniqueKey": "글로벌텍스프리(주)_[코스닥/중견기업]각부문별신입/경력채용",
+    "mainCategory": "GENERAL",
+    "company": "글로벌텍스프리(주)",
+    "title": "[코스닥/중견기업] 각 부문별 신입/경력 채용",
+    "location": "서울중구",
+    "type": "신입·경력",
+    "subCategories": [
+      "회계"
+    ],
+    "keywords": [
+      "결산",
+      "인턴",
+      "사람인"
+    ],
+    "deadline": "공시 참조",
+    "description": "글로벌텍스프리(주)의 [코스닥/중견기업] 각 부문별 신입/경력 채용 채용공고입니다. 사람인 공식 페이지를 통해 상세내용 확인 및 지원이 가능합니다.",
+    "qualifications": "상경계열, 회계/재무 관련 자격증 우대 및 채용 공고 참조",
+    "applyUrl": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55142729&location=ts&searchword=%EA%B2%B0%EC%82%B0+%EC%9D%B8%ED%84%B4&searchType=search&paid_fl=n&search_uuid=daacd1df-e5ce-4786-9a36-dffbe0040134"
+  },
+  {
     "id": "saramin_-6994237607671851315",
     "uniqueKey": "한영회계법인_경영지원본부재무실MBA&Billing팀단기인턴",
     "mainCategory": "BIG4",
