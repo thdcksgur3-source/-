@@ -1,5 +1,68 @@
 [
   {
+    "id": "saramin_1217778144392554309",
+    "uniqueKey": "대화제약(주)_에스테틱사업팀,개발팀,회계팀,약사팀,제제연구1팀,QC팀채용",
+    "mainCategory": "GENERAL",
+    "company": "대화제약(주)",
+    "title": "에스테틱사업팀, 개발팀, 회계팀, 약사팀, 제제연구1팀, QC팀 채용",
+    "location": "서울서초구",
+    "type": "신입·경력",
+    "subCategories": [
+      "회계"
+    ],
+    "keywords": [
+      "감사",
+      "인턴",
+      "사람인"
+    ],
+    "deadline": "공시 참조",
+    "description": "대화제약(주)의 에스테틱사업팀, 개발팀, 회계팀, 약사팀, 제제연구1팀, QC팀 채용 채용공고입니다. 사람인 공식 페이지를 통해 상세내용 확인 및 지원이 가능합니다.",
+    "qualifications": "상경계열, 회계/재무 관련 자격증 우대 및 채용 공고 참조",
+    "applyUrl": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55395904&location=ts&searchword=%EA%B0%90%EC%82%AC+%EC%9D%B8%ED%84%B4&searchType=search&paid_fl=n&search_uuid=856785be-572a-4125-8dc1-79f05d8f3874"
+  },
+  {
+    "id": "saramin_-3007908130119046001",
+    "uniqueKey": "(주)알스퀘어_회계ERP운영담당자(인턴)",
+    "mainCategory": "GENERAL",
+    "company": "(주)알스퀘어",
+    "title": "회계 ERP 운영 담당자 (인턴)",
+    "location": "서울서초구",
+    "type": "경력무관",
+    "subCategories": [
+      "회계"
+    ],
+    "keywords": [
+      "회계",
+      "인턴",
+      "사람인"
+    ],
+    "deadline": "공시 참조",
+    "description": "(주)알스퀘어의 회계 ERP 운영 담당자 (인턴) 채용공고입니다. 사람인 공식 페이지를 통해 상세내용 확인 및 지원이 가능합니다.",
+    "qualifications": "상경계열, 회계/재무 관련 자격증 우대 및 채용 공고 참조",
+    "applyUrl": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55404656&location=ts&searchword=%ED%9A%8C%EA%B3%84+%EC%9D%B8%ED%84%B4&searchType=search&paid_fl=n&search_uuid=d4c013b1-04b6-4f0c-ac74-812fbff10eab"
+  },
+  {
+    "id": "saramin_8335246894969345410",
+    "uniqueKey": "(주)마녀공장_재경팀회계업무보조인턴",
+    "mainCategory": "GENERAL",
+    "company": "(주)마녀공장",
+    "title": "재경팀 회계업무 보조 인턴",
+    "location": "서울강남구",
+    "type": "경력무관",
+    "subCategories": [
+      "회계"
+    ],
+    "keywords": [
+      "회계",
+      "인턴",
+      "사람인"
+    ],
+    "deadline": "공시 참조",
+    "description": "(주)마녀공장의 재경팀 회계업무 보조 인턴 채용공고입니다. 사람인 공식 페이지를 통해 상세내용 확인 및 지원이 가능합니다.",
+    "qualifications": "상경계열, 회계/재무 관련 자격증 우대 및 채용 공고 참조",
+    "applyUrl": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55399598&location=ts&searchword=%ED%9A%8C%EA%B3%84+%EC%9D%B8%ED%84%B4&searchType=search&paid_fl=n&search_uuid=d4c013b1-04b6-4f0c-ac74-812fbff10eab"
+  },
+  {
     "id": "saramin_-3509299940761590089",
     "uniqueKey": "삼일회계법인_[삼일회계법인]PublicService팀컨설팅인턴채용(용산근무)",
     "mainCategory": "BIG4",
