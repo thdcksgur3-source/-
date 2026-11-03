@@ -1,5 +1,26 @@
 [
   {
+    "id": "saramin_-2189712104570160539",
+    "uniqueKey": "한국산업단지공단_2027년제1차계약직채용공고",
+    "mainCategory": "GENERAL",
+    "company": "한국산업단지공단",
+    "title": "2027년 제1차 계약직 채용 공고",
+    "location": "대구전체",
+    "type": "경력무관",
+    "subCategories": [
+      "회계"
+    ],
+    "keywords": [
+      "감사",
+      "인턴",
+      "사람인"
+    ],
+    "deadline": "공시 참조",
+    "description": "한국산업단지공단의 2027년 제1차 계약직 채용 공고 채용공고입니다. 사람인 공식 페이지를 통해 상세내용 확인 및 지원이 가능합니다.",
+    "qualifications": "상경계열, 회계/재무 관련 자격증 우대 및 채용 공고 참조",
+    "applyUrl": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55441601&location=ts&searchword=%EA%B0%90%EC%82%AC+%EC%9D%B8%ED%84%B4&searchType=search&paid_fl=n&search_uuid=684d72f0-7fd9-49d5-bc4a-e3d87fd13bec"
+  },
+  {
     "id": "saramin_-6063539637457968666",
     "uniqueKey": "기술보증기금_기술보증기금무기계약직(고졸자)채용공고",
     "mainCategory": "GENERAL",
