@@ -1,5 +1,48 @@
 [
   {
+    "id": "saramin_-4716897250726904062",
+    "uniqueKey": "(주)코스메카코리아_[신입/경력]회계/자금담당자모집",
+    "mainCategory": "GENERAL",
+    "company": "(주)코스메카코리아",
+    "title": "[신입/경력] 회계/자금 담당자 모집",
+    "location": "경기성남시 수정구",
+    "type": "신입·경력",
+    "subCategories": [
+      "회계",
+      "재무"
+    ],
+    "keywords": [
+      "감사",
+      "인턴",
+      "사람인"
+    ],
+    "deadline": "공시 참조",
+    "description": "(주)코스메카코리아의 [신입/경력] 회계/자금 담당자 모집 채용공고입니다. 사람인 공식 페이지를 통해 상세내용 확인 및 지원이 가능합니다.",
+    "qualifications": "상경계열, 회계/재무 관련 자격증 우대 및 채용 공고 참조",
+    "applyUrl": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55441295&location=ts&searchword=%EA%B0%90%EC%82%AC+%EC%9D%B8%ED%84%B4&searchType=search&paid_fl=n&search_uuid=70c8b327-c230-4fd2-a3a2-6e92a15c66d4"
+  },
+  {
+    "id": "saramin_-6963995862758331485",
+    "uniqueKey": "주식회사동희홀딩스_동희그룹원가관리경력및신입(인턴)사원(전역장교우대)",
+    "mainCategory": "GENERAL",
+    "company": "주식회사 동희홀딩스",
+    "title": "동희그룹 원가관리 경력 및 신입(인턴)사원(전역장교 우대)",
+    "location": "경기수원시 권선구",
+    "type": "경력무관",
+    "subCategories": [
+      "원가"
+    ],
+    "keywords": [
+      "원가",
+      "인턴",
+      "사람인"
+    ],
+    "deadline": "공시 참조",
+    "description": "주식회사 동희홀딩스의 동희그룹 원가관리 경력 및 신입(인턴)사원(전역장교 우대) 채용공고입니다. 사람인 공식 페이지를 통해 상세내용 확인 및 지원이 가능합니다.",
+    "qualifications": "상경계열, 회계/재무 관련 자격증 우대 및 채용 공고 참조",
+    "applyUrl": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55465272&location=ts&searchword=%EC%9B%90%EA%B0%80+%EC%9D%B8%ED%84%B4&searchType=search&paid_fl=n&search_uuid=e858d895-6a71-4d2b-923a-e3ca86e85c54"
+  },
+  {
     "id": "saramin_-4980882454814902457",
     "uniqueKey": "사회적협동조합행복더하기_사회적협동조합행복더하기회계·행정및사업운영지원인턴채용공고",
     "mainCategory": "GENERAL",
