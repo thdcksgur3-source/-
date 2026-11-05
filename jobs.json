@@ -1,5 +1,89 @@
 [
   {
+    "id": "saramin_-8854168102524582826",
+    "uniqueKey": "안진회계법인_[딜로이트안진회계법인]감사지원업무(조회서수발신)인턴채용",
+    "mainCategory": "BIG4",
+    "company": "안진회계법인",
+    "title": "[딜로이트 안진회계법인]감사지원업무(조회서 수발신) 인턴 채용",
+    "location": "서울영등포구",
+    "type": "신입",
+    "subCategories": [
+      "회계"
+    ],
+    "keywords": [
+      "감사",
+      "인턴",
+      "사람인"
+    ],
+    "deadline": "공시 참조",
+    "description": "안진회계법인의 [딜로이트 안진회계법인]감사지원업무(조회서 수발신) 인턴 채용 채용공고입니다. 사람인 공식 페이지를 통해 상세내용 확인 및 지원이 가능합니다.",
+    "qualifications": "상경계열, 회계/재무 관련 자격증 우대 및 채용 공고 참조",
+    "applyUrl": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55494481&location=ts&searchword=%EA%B0%90%EC%82%AC+%EC%9D%B8%ED%84%B4&searchType=search&paid_fl=n&search_uuid=b6e4ac4c-dc07-46d4-ae2f-f3ba510d224f"
+  },
+  {
+    "id": "saramin_2916043636688520887",
+    "uniqueKey": "안진회계법인_[딜로이트안진회계법인]감사지원업무(조회서조서화)인턴채용",
+    "mainCategory": "BIG4",
+    "company": "안진회계법인",
+    "title": "[딜로이트 안진회계법인]감사지원업무(조회서 조서화) 인턴 채용",
+    "location": "서울영등포구",
+    "type": "경력무관",
+    "subCategories": [
+      "회계"
+    ],
+    "keywords": [
+      "감사",
+      "인턴",
+      "사람인"
+    ],
+    "deadline": "공시 참조",
+    "description": "안진회계법인의 [딜로이트 안진회계법인]감사지원업무(조회서 조서화) 인턴 채용 채용공고입니다. 사람인 공식 페이지를 통해 상세내용 확인 및 지원이 가능합니다.",
+    "qualifications": "상경계열, 회계/재무 관련 자격증 우대 및 채용 공고 참조",
+    "applyUrl": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55494542&location=ts&searchword=%EA%B0%90%EC%82%AC+%EC%9D%B8%ED%84%B4&searchType=search&paid_fl=n&search_uuid=b6e4ac4c-dc07-46d4-ae2f-f3ba510d224f"
+  },
+  {
+    "id": "saramin_4478611973805118964",
+    "uniqueKey": "삼정KPMG_[삼정KPMG]감사업무보조단기인턴",
+    "mainCategory": "BIG4",
+    "company": "삼정KPMG",
+    "title": "[삼정KPMG] 감사업무보조 단기 인턴",
+    "location": "서울강남구",
+    "type": "신입",
+    "subCategories": [
+      "회계"
+    ],
+    "keywords": [
+      "감사",
+      "인턴",
+      "사람인"
+    ],
+    "deadline": "공시 참조",
+    "description": "삼정KPMG의 [삼정KPMG] 감사업무보조 단기 인턴 채용공고입니다. 사람인 공식 페이지를 통해 상세내용 확인 및 지원이 가능합니다.",
+    "qualifications": "상경계열, 회계/재무 관련 자격증 우대 및 채용 공고 참조",
+    "applyUrl": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55493356&location=ts&searchword=%EA%B0%90%EC%82%AC+%EC%9D%B8%ED%84%B4&searchType=search&paid_fl=n&search_uuid=b6e4ac4c-dc07-46d4-ae2f-f3ba510d224f"
+  },
+  {
+    "id": "saramin_1434429980843628680",
+    "uniqueKey": "안국약품(주)_안국약품㈜11월신입및경력직채용",
+    "mainCategory": "GENERAL",
+    "company": "안국약품(주)",
+    "title": "안국약품㈜ 11월 신입 및 경력직 채용",
+    "location": "경기과천시",
+    "type": "신입·경력",
+    "subCategories": [
+      "원가"
+    ],
+    "keywords": [
+      "원가",
+      "인턴",
+      "사람인"
+    ],
+    "deadline": "공시 참조",
+    "description": "안국약품(주)의 안국약품㈜ 11월 신입 및 경력직 채용 채용공고입니다. 사람인 공식 페이지를 통해 상세내용 확인 및 지원이 가능합니다.",
+    "qualifications": "상경계열, 회계/재무 관련 자격증 우대 및 채용 공고 참조",
+    "applyUrl": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55492024&location=ts&searchword=%EC%9B%90%EA%B0%80+%EC%9D%B8%ED%84%B4&searchType=search&paid_fl=n&search_uuid=73267d38-b3c4-4705-95dd-a19c49696352"
+  },
+  {
     "id": "saramin_-6317827497224680101",
     "uniqueKey": "(주)딥다이브_[베리시]재무회계인턴",
     "mainCategory": "GENERAL",
