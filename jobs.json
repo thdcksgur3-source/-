@@ -1,5 +1,27 @@
 [
   {
+    "id": "saramin_-6317827497224680101",
+    "uniqueKey": "(주)딥다이브_[베리시]재무회계인턴",
+    "mainCategory": "GENERAL",
+    "company": "(주)딥다이브",
+    "title": "[베리시] 재무회계 인턴",
+    "location": "서울성동구",
+    "type": "신입",
+    "subCategories": [
+      "회계",
+      "재무"
+    ],
+    "keywords": [
+      "회계",
+      "인턴",
+      "사람인"
+    ],
+    "deadline": "공시 참조",
+    "description": "(주)딥다이브의 [베리시] 재무회계 인턴 채용공고입니다. 사람인 공식 페이지를 통해 상세내용 확인 및 지원이 가능합니다.",
+    "qualifications": "상경계열, 회계/재무 관련 자격증 우대 및 채용 공고 참조",
+    "applyUrl": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55481715&location=ts&searchword=%ED%9A%8C%EA%B3%84+%EC%9D%B8%ED%84%B4&searchType=search&paid_fl=n&search_uuid=fd552547-2d43-4ae3-992a-309082f59c56"
+  },
+  {
     "id": "saramin_491280690222647287",
     "uniqueKey": "한영회계법인_감사부문디지털감사&AI리스크분석인턴",
     "mainCategory": "BIG4",
